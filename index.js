@@ -64,6 +64,8 @@ io.on("connect", (socket) => {
 
 require("./helper/db")();
 
-server.listen(3000, () => {
+const port = process.env.PORT
+
+server.listen(port, () => {
   console.log("Server working on port 3000");
 });
