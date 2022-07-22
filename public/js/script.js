@@ -45,6 +45,6 @@ function forMsg(msg) {
 
 function forBot(data) {
   const p = document.createElement("p");
-  p.innerHTML = `${data.username} ${data.msg}`;
+  p.innerHTML = `${data.username} ${data.msg}              ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
   chat.append(p);
 }
