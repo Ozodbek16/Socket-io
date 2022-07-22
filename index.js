@@ -50,7 +50,9 @@ io.on("connect", (socket) => {
       msg: "welcome to the chat",
     });
 
-    socket.emit("users", { users: await usersSchema.find() });
+    socket.emit("users", {
+      users: await usersSchema.find({ room: data.room }),
+    });
 
     socket.on("message", (msg) => {
       io.to(data.room).emit("message", { username: data.username, msg });
