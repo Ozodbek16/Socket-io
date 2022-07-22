@@ -50,6 +50,8 @@ io.on("connect", (socket) => {
       msg: "welcome to the chat",
     });
 
+    socket.emit("users", { users: await usersSchema.find() });
+
     socket.on("message", (msg) => {
       io.to(data.room).emit("message", { username: data.username, msg });
     });
@@ -64,7 +66,7 @@ io.on("connect", (socket) => {
 
 require("./helper/db")();
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000;
 
 server.listen(port, () => {
   console.log("Server working on port 3000");

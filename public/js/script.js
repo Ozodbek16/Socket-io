@@ -1,17 +1,10 @@
 const socket = io();
-// function disableF5(e) {
-//   if ((e.which || e.keyCode) == 116 || (e.which || e.keyCode) == 82)
-//     e.preventDefault();
-// }
-
-// $(document).ready(function () {
-//   $(document).on("keydown", disableF5);
-// });
 
 const form = document.querySelector("form");
 const chatMsg = document.querySelector(".chat__message");
 const chat = document.querySelector(".chat__messages");
 const roomName = document.querySelector("#room_name");
+const ul = document.querySelector("#users");
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
@@ -34,6 +27,14 @@ socket.on("bot", (data) => {
 
 socket.on("roomname", (room) => {
   roomName.innerHTML = room;
+});
+
+socket.on("users", (data) => {
+  for (let i = 0; i < data.users.length; i++) {
+    const li = document.createElement("li");
+    li.innerHTML = data.users[i].name;
+    ul.append(li);
+  }
 });
 
 function forMsg(msg) {
