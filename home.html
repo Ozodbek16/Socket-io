@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="top__chat"></div>
+
+    <div class="chat">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="chat__join">
+              <div class="chat__header">
+                <div class="chat__logo">
+                  <span class="chat__logo__span"
+                    ><i class="fas fa-comments"></i
+                  ></span>
+                  Chatogram X
+                </div>
+                <label for="chat__btn" class="labal__btn"
+                  >Kirish
+                  <span><i class="far fa-chevron-right"></i></span>
+                </label>
+              </div>
+              <div class="chat__join_header">
+                <h4 class="chat__sign">Qo'shilish</h4>
+                <p class="chat__sign__text">
+                  Iltimos ismingizni va qo'shiluvchi guruhingizni kiriting
+                </p>
+              </div>
+              <div class="chat__main">
+                <form class="chat__form" action="/chat">
+                  <div class="form__input-username form-group">
+                    <label
+                      for="exampleInputEmail1"
+                      class="input__username-label"
+                      >Ismingizni yozing</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control input__username"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                      placeholder="Ismingizni yozing"
+                      name="username"
+                      required
+                    />
+                  </div>
+                  <div class="form__input-room form-group">
+                    <label
+                      for="exampleFormControlSelect1"
+                      class="input__username-room"
+                      >Guruhga kirish</label
+                    >
+                    <div class="select__div">
+                      <select
+                        class="input__select form-control"
+                        id="exampleFormControlSelect1"
+                        name="room"
+                      >
+                        <option>PHP</option>
+                        <option>JavaScript</option>
+                        <option>Python</option>
+                        <option>C++</option>
+                        <option>Java</option>
+                      </select>
+                      <label
+                        class="select__arrow"
+                        for="exampleFormControlSelect1"
+                        ><i class="fal fa-chevron-down"></i
+                      ></label>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-info form__btn_send"
+                    id="chat__btn"
+                  >
+                    Chatga kirish
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="bottom__text">Chatogram rasmiy saytiga xush kelibsiz</p>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js"
+      integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </body>
+</html>
