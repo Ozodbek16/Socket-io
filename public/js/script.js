@@ -39,12 +39,16 @@ socket.on("users", (data) => {
 
 function forMsg(msg) {
   const p = document.createElement("p");
-  p.innerHTML = `<strong>${msg.username}</strong>  ${msg.msg}`;
+  p.innerHTML = `<strong>${msg.username}</strong>  ${
+    msg.msg
+  }         ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
   chat.append(p);
 }
 
 function forBot(data) {
   const p = document.createElement("p");
-  p.innerHTML = `${data.username} ${data.msg}              ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
+  p.innerHTML = `${data.username} ${
+    data.msg
+  }              ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
   chat.append(p);
 }
